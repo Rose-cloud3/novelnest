@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NovelNest — Your Home for Endless Fiction</title>
+<meta name="description" content="Discover original fiction on NovelNest. Read engaging stories in short, easy-to-enjoy episodes.">
+<style>
+:root{--bg:#faf7f9;--card:#fff;--text:#292229;--muted:#786b74;--line:#e8dde4;--accent:#7b3f61;--soft:#f3e6ed;--green:#3f8062;--danger:#b34e5c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}button,input,textarea,select{font:inherit}.hidden{display:none!important}
+.header{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;color:var(--text)}.brand img{width:48px;height:48px;object-fit:contain;border-radius:9px}.logo{font-family:Georgia,serif;font-size:27px;font-weight:700;letter-spacing:-1px}.logo span{background:linear-gradient(90deg,#17133f,#b32b86);-webkit-background-clip:text;background-clip:text;color:transparent}.brand-tagline{display:block;font-size:10px;letter-spacing:1.2px;color:#76677d;margin-top:1px}
+.header-right{display:flex;align-items:center;gap:10px}.navbtn{border:0;background:transparent;padding:9px 12px;cursor:pointer;color:#5f5058}.adminbtn{background:var(--soft);color:var(--accent);border-radius:9px;font-weight:700}
+.container{max-width:1180px;margin:auto;padding:45px 25px}.hero{padding:70px 8%;border-radius:25px;background:linear-gradient(120deg,#f8e9f0,#fff);margin-bottom:45px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#a24f76}.hero h1{font-family:Georgia,serif;font-size:56px;line-height:1.05;max-width:720px;margin:10px 0}.hero p{font-family:Georgia,serif;color:var(--muted);font-size:18px;max-width:620px;line-height:1.7}.btn{border:0;background:var(--accent);color:#fff;border-radius:9px;padding:11px 17px;cursor:pointer;font-weight:700}.btn.light{background:var(--soft);color:var(--accent)}.btn.danger{background:#f8e0e3;color:var(--danger)}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:40px 0 18px}.section-head h2{margin:0;font:700 31px Georgia,serif}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;cursor:pointer}.cover{height:220px;border-radius:11px;background:linear-gradient(145deg,#ead7e1,#f7edf2);display:flex;align-items:center;justify-content:center;text-align:center;color:#68465a;font-weight:800;letter-spacing:1px}.card h3{font:700 23px Georgia,serif;margin:12px 0 4px}.meta{font-size:13px;color:var(--muted)}.tag{display:inline-block;background:var(--soft);color:var(--accent);padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800;margin-top:12px}
+.admin{display:grid;grid-template-columns:225px 1fr;min-height:calc(100vh - 70px)}.sidebar{background:#2d232a;color:#fff;padding:28px 16px}.sidebar h3{margin:0 10px 25px;font-size:18px}.side-btn{width:100%;border:0;background:transparent;color:#d8cbd1;text-align:left;padding:12px 13px;border-radius:8px;cursor:pointer;margin-bottom:5px}.side-btn.active,.side-btn:hover{background:#47353f;color:#fff}.admin-main{padding:35px;max-width:1100px}.admin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.admin-top h1{margin:0;font-size:31px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:19px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:29px;margin:7px 0}.up{color:var(--green);font-size:12px;font-weight:700}.dash-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-top:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.panel h3{margin:0 0 18px}.bars{height:220px;display:flex;align-items:end;gap:13px;padding-top:20px}.barwrap{flex:1;height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:7px}.bar{width:100%;max-width:40px;background:#b77d9a;border-radius:6px 6px 0 0}.barwrap small{font-size:10px;color:var(--muted)}.barwrap span{font-size:10px;color:#806d77}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px 8px;border-bottom:1px solid var(--line);font-size:13px}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}.form{max-width:760px}.field{margin-bottom:17px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff;outline:none}.field textarea{min-height:160px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.story-detail{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:center}.story-detail h1{font:700 50px Georgia,serif;line-height:1.05}.chapter-list{max-width:850px}.chapter-row{display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:center;padding:16px;background:#fff;border:1px solid var(--line);border-radius:11px;margin:9px 0;cursor:pointer}.reader{max-width:760px;margin:auto}.reader-head{text-align:center;border-bottom:1px solid var(--line);padding-bottom:30px}.reader-head h1{font:700 42px Georgia,serif}.story-text{font:20px/2 Georgia,serif;margin:40px 0}.story-text p{margin-bottom:24px}.reader-nav{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+footer{text-align:center;padding:35px;color:#8b7b84;font-size:12px;border-top:1px solid var(--line);margin-top:50px}
+@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.stat-grid{grid-template-columns:1fr 1fr}.admin{grid-template-columns:1fr}.sidebar{display:flex;gap:5px;overflow:auto}.sidebar h3{display:none}.side-btn{white-space:nowrap;width:auto}.dash-grid{grid-template-columns:1fr}.story-detail{grid-template-columns:1fr}.cover{max-width:330px}.hero h1{font-size:43px}}
+@media(max-width:550px){.brand img{width:40px;height:40px}.logo{font-size:23px}.brand-tagline{font-size:8px}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr 1fr}.admin-main{padding:20px}.header{padding:0 15px}.header nav{display:none}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="brand" href="#home" onclick="readerPage('home');return false" aria-label="NovelNest home"><img src="assets/images/novelnest-logo.png" alt="NovelNest logo"><span><span class="logo">Novel<span>Nest</span></span><span class="brand-tagline">YOUR HOME FOR ENDLESS FICTION</span></span></a>
+  <div class="header-right">
+    <button class="navbtn" onclick="readerPage('home')">Home</button>
+    <button class="navbtn" onclick="readerPage('stories')">Stories</button>
+    <button class="navbtn adminbtn" onclick="openAdmin()">Admin</button>
+  </div>
+</header>
+
+<div id="readerApp">
+<main id="home" class="container">
+  <section class="hero">
+    <div class="eyebrow">READ • DISCOVER • IMAGINE</div>
+    <h1>Stories that take you somewhere.</h1>
+    <p>Your home for endless fiction. Discover original stories, unforgettable characters and new worlds — one short episode at a time.</p>
+    <button class="btn" onclick="openStory('boss')">Start Reading</button>
+  </section>
+  <div class="section-head"><h2>Featured Story</h2></div>
+  <div id="featured"></div>
+  <div class="section-head"><h2>Latest Stories</h2></div>
+  <div class="grid" id="storyGrid"></div>
+</main>
+
+<main id="stories" class="container hidden">
+  <div class="section-head"><h2>All Stories</h2></div>
+  <div class="grid" id="allStories"></div>
+</main>
+
+<main id="details" class="container hidden">
+  <button class="btn light" onclick="readerPage('home')">← Home</button>
+  <div class="story-detail" style="margin-top:30px">
+    <div class="cover" style="height:390px" id="dCover"></div>
+    <div><span class="tag" id="dGenre"></span><h1 id="dTitle"></h1><p class="meta" id="dAuthor"></p><p id="dDesc" style="color:var(--muted);line-height:1.8"></p><button class="btn" onclick="showChapters()">Start Reading</button></div>
+  </div>
+</main>
+
+<main id="chapters" class="container hidden">
+  <div class="chapter-list">
+    <button class="btn light" onclick="openStory(currentStory)">← Story</button>
+    <p class="eyebrow" id="chapterName" style="margin-top:30px"></p><h1 style="font:700 45px Georgia,serif">Episodes</h1>
+    <div id="chaptersBox"></div>
+  </div>
+</main>
+
+<main id="reader" class="container hidden">
+  <div class="reader">
+    <button class="btn light" onclick="showChapters()">← Episodes</button>
+    <div class="reader-head" style="margin-top:25px"><div class="eyebrow" id="rStory"></div><h1 id="rTitle"></h1><div class="meta" id="rAuthor"></div></div>
+    <article class="story-text" id="rText"></article>
+    <div class="reader-nav"><button class="btn light" id="prev" onclick="changeChapter(-1)">← Previous</button><button class="btn" id="next" onclick="changeChapter(1)">Next →</button></div>
+  </div>
+</main>
+</div>
+
+<div id="adminApp" class="hidden">
+<div class="admin">
+<aside class="sidebar">
+  <h3>NOVELNEST ADMIN</h3>
+  <button class="side-btn active" onclick="adminPage('dashboard',this)">📊 Dashboard</button>
+  <button class="side-btn" onclick="adminPage('add',this)">✍️ Add Story</button>
+  <button class="side-btn" onclick="adminPage('manage',this)">📚 Manage Stories</button>
+  <button class="side-btn" onclick="adminPage('users',this)">👤 Users</button>
+  <button class="side-btn" onclick="closeAdmin()">← View Website</button>
+</aside>
+<section class="admin-main">
+  <div id="dashboard" class="admin-section">
+    <div class="admin-top"><h1>Dashboard</h1><span class="meta">Last 7 days · Prototype data</span></div>
+    <div class="stat-grid">
+      <div class="stat"><small>Total Users</small><strong>1,245</strong><span class="up">↑ 12.4% this month</span></div>
+      <div class="stat"><small>New Today</small><strong>28</strong><span class="up">↑ 16.7% vs yesterday</span></div>
+      <div class="stat"><small>Story Views</small><strong>8,921</strong><span class="up">↑ 8.2% this month</span></div>
+      <div class="stat"><small>Stories</small><strong id="statStories">3</strong><span class="up">Published</span></div>
+    </div>
+    <div class="dash-grid">
+      <div class="panel"><h3>New Users — Last 7 Days</h3><div class="bars">${["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d,i)=>`<div class="barwrap"><div class="bar" style="height:${[38,54,47,72,61,88,100][i]}%"></div><span>${[14,21,18,27,23,31,28][i]}</span><small>${d}</small></div>`).join("")}</div></div>
+      <div class="panel"><h3>Top Stories</h3><table class="table"><tr><th>Story</th><th>Views</th></tr><tr><td>My Boss Downstairs</td><td>4,820</td></tr><tr><td>Moonlight Letters</td><td>2,160</td></tr><tr><td>The Hidden Kingdom</td><td>1,941</td></tr></table></div>
+    </div>
+    <div class="panel" style="margin-top:20px"><h3>What you can track later</h3><p class="meta">Daily active users · New registrations · Story views · Episodes read · Likes · Comments · Bookmarks · Traffic sources · Most-read stories · Reader retention.</p></div>
+  </div>
+
+  <div id="add" class="admin-section hidden">
+    <div class="admin-top"><h1>Add New Story</h1></div>
+    <form class="form" onsubmit="publishStory(event)">
+      <div class="row"><div class="field"><label>Story Title</label><input id="newTitle" required placeholder="Enter story title"></div><div class="field"><label>Author</label><input id="newAuthor" required value="Your Name"></div></div><div class="field"><label>Story Poster / Cover Image</label><input id="newCover" type="file" accept="image/*" onchange="previewPoster(event)"><div id="posterPreview" style="display:none;margin-top:10px"><img id="posterImage" style="width:170px;height:240px;object-fit:cover;border-radius:10px;border:1px solid var(--line)"></div><p class="meta">Upload a vertical poster/cover to make the story attractive on the website.</p></div>
+      <div class="row"><div class="field"><label>Genre</label><select id="newGenre"><option>Romance</option><option>Drama</option><option>Fantasy</option><option>Mystery</option></select></div><div class="field"><label>Status</label><select><option>Ongoing</option><option>Completed</option></select></div></div>
+      <div class="field"><label>Story Description</label><textarea id="newDesc" required placeholder="Write a short description..."></textarea></div>
+      <p class="meta">NovelNest stories are designed as mini-novels with around 20–25 short, engaging episodes. You can add the remaining episodes as you prepare each story.</p><div class="field"><label>First Episode Title</label><input id="newChapter" required placeholder="Episode 1 title"></div>
+      <div class="field"><label>First Episode Text</label><textarea id="newText" required placeholder="Write your short episode here..."></textarea></div>
+      <button class="btn">Publish Story</button>
+    </form>
+  </div>
+
+  <div id="manage" class="admin-section hidden">
+    <div class="admin-top"><h1>Manage Stories</h1><button class="btn" onclick="adminPage('add')">+ Add Story</button></div>
+    <table class="table" style="background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden"><thead><tr><th>Story</th><th>Genre</th><th>Episodes</th><th>Status</th></tr></thead><tbody id="manageRows"></tbody></table>
+  </div>
+
+  <div id="users" class="admin-section hidden">
+    <div class="admin-top"><h1>Users</h1></div>
+    <div class="stat-grid"><div class="stat"><small>Total users</small><strong>1,245</strong></div><div class="stat"><small>Active today</small><strong>184</strong></div><div class="stat"><small>New today</small><strong>28</strong></div><div class="stat"><small>Returning readers</small><strong>62%</strong></div></div>
+    <div class="panel" style="margin-top:20px"><h3>Important</h3><p class="meta">These numbers are demonstration data in this prototype. A real website will need a database and analytics system to record actual users and activity.</p></div>
+  </div>
+</section>
+</div>
+</div>
+
+<footer>© 2026 NovelNest · Your home for endless fiction</footer>
+
+<script>
+const stories={
+boss:{title:"My Boss Downstairs",author:"Your Name",genre:"Romance · Drama",desc:"Nova moves to a new city hoping for a fresh beginning. A new job, a new home and an unexpectedly complicated neighbor change everything.",cover:"MY BOSS<br>DOWNSTAIRS",chapters:[
+{title:"New City",text:["Nova looked out of the car window as the city slowly came into view. It was unfamiliar, busy and strangely exciting.","She had come here for a fresh start. A new job. A new home. A new chapter of her life.","“Okay, Nova,” she whispered to herself. “You can do this.”","By evening, she finally reached her new house. She took a deep breath, picked up her bags and walked toward the door, unaware that someone downstairs was about to become a very important part of her new life."]},
+{title:"The Neighbor",text:["Nova had barely finished unpacking when she heard a sound downstairs.","She paused beside the staircase. Someone was home.","She didn't know it yet, but the quiet man living on the floor below would soon become impossible to ignore."]},
+{title:"An Unexpected Meeting",text:["The next morning, Nova rushed outside with one shoe in her hand and a bag over her shoulder.","At the exact same moment, the door downstairs opened.","And for the first time, she met Lu Chang."]}]},
+moon:{title:"Moonlight Letters",author:"Your Name",genre:"Drama",desc:"A collection of letters that connect two strangers across an unexpected distance.",cover:"MOONLIGHT<br>LETTERS",chapters:[{title:"The First Letter",text:["The first letter arrived on a rainy Tuesday.","There was no name on the envelope, only a sentence written in careful handwriting: I hope you are doing well."]}]},
+kingdom:{title:"The Hidden Kingdom",author:"Your Name",genre:"Fantasy",desc:"A girl discovers a hidden world behind an ordinary door.",cover:"THE HIDDEN<br>KINGDOM",chapters:[{title:"The Door",text:["The door had always been there. She had simply never noticed it before.","That night, the handle began to glow."]}]}
+};
+let currentStory="boss",currentChapter=0;
+function readerPage(id){document.getElementById("adminApp").classList.add("hidden");document.getElementById("readerApp").classList.remove("hidden");document.querySelectorAll("#readerApp main").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");window.scrollTo(0,0);if(id==="stories")renderAll();if(id==="home")renderHome();}
+function renderHome(){document.getElementById("featured").innerHTML=`<article class="card" style="display:flex;gap:25px;align-items:center" onclick="openStory('boss')"><div class="cover" style="min-width:220px">MY BOSS<br>DOWNSTAIRS</div><div><span class="tag">Romance · Drama</span><h3 style="font-size:31px">My Boss Downstairs</h3><p class="meta">A new city. A new job. A mysterious neighbor downstairs.</p><button class="btn">View Story</button></div></article>`;renderAll("storyGrid")}
+function renderAll(target="allStories"){document.getElementById(target).innerHTML=Object.entries(stories).map(([k,s])=>`<article class="card" onclick="openStory('${k}')"><div class="cover">${s.poster ? `<img src="${s.poster}" alt="${s.title} poster" style="width:100%;height:100%;object-fit:cover;border-radius:11px">` : s.cover}</div><span class="tag">${s.genre}</span><h3>${s.title}</h3><div class="meta">By ${s.author} · ${s.chapters.length} episode${s.chapters.length>1?"s":""}</div></article>`).join("")}
+function openStory(k){currentStory=k;const s=stories[k];document.getElementById("dCover").innerHTML=s.poster ? `<img src="${s.poster}" alt="${s.title} poster" style="width:100%;height:100%;object-fit:cover;border-radius:11px">` : s.cover;document.getElementById("dGenre").textContent=s.genre;document.getElementById("dTitle").textContent=s.title;document.getElementById("dAuthor").textContent="By "+s.author;document.getElementById("dDesc").textContent=s.desc;readerPage("details")}
+function showChapters(){const s=stories[currentStory];document.getElementById("chapterName").textContent=s.title;document.getElementById("chaptersBox").innerHTML=s.chapters.map((c,i)=>`<div class="chapter-row" onclick="readChapter(${i})"><small>EPISODE ${i+1}</small><strong>${c.title}</strong><button class="btn light">Read →</button></div>`).join("");readerPage("chapters")}
+function readChapter(i){currentChapter=i;const s=stories[currentStory],c=s.chapters[i];document.getElementById("rStory").textContent=s.title;document.getElementById("rTitle").textContent="Episode "+(i+1)+" — "+c.title;document.getElementById("rAuthor").textContent="Written by "+s.author;document.getElementById("rText").innerHTML=c.text.map(p=>`<p>${p}</p>`).join("");document.getElementById("prev").style.visibility=i?"visible":"hidden";document.getElementById("next").style.visibility=i<s.chapters.length-1?"visible":"hidden";readerPage("reader")}
+function changeChapter(n){let i=currentChapter+n;if(i>=0&&i<stories[currentStory].chapters.length)readChapter(i)}
+function openAdmin(){document.getElementById("readerApp").classList.add("hidden");document.getElementById("adminApp").classList.remove("hidden");adminPage("dashboard")}
+function closeAdmin(){readerPage("home")}
+function adminPage(id,btn){document.querySelectorAll(".admin-section").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");if(btn){document.querySelectorAll(".side-btn").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}if(id==="manage")renderManage();window.scrollTo(0,0)}
+function renderManage(){document.getElementById("manageRows").innerHTML=Object.values(stories).map(s=>`<tr><td><strong>${s.title}</strong></td><td>${s.genre}</td><td>${s.chapters.length}</td><td>Published</td></tr>`).join("");document.getElementById("statStories").textContent=Object.keys(stories).length}
+function publishStory(e){e.preventDefault();let id="story"+Date.now(),title=document.getElementById("newTitle").value,author=document.getElementById("newAuthor").value,genre=document.getElementById("newGenre").value,desc=document.getElementById("newDesc").value,ct=document.getElementById("newChapter").value,text=document.getElementById("newText").value;stories[id]={title,author,genre,desc,cover:title.toUpperCase(),chapters:[{title:ct,text:text.split("\\n").filter(Boolean)}]};alert("Story published in this prototype!");e.target.reset();renderManage();adminPage("manage")}
+renderHome();
+</script>
+</body>
+</html>
